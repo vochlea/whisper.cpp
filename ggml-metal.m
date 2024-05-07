@@ -1367,8 +1367,8 @@ static enum ggml_status ggml_metal_graph_compute(
                         GGML_ASSERT(ne12 % ne02 == 0);
                         GGML_ASSERT(ne13 % ne03 == 0);
 
-                        const uint r2 = ne12/ne02;
-                        const uint r3 = ne13/ne03;
+                        const unsigned int r2 = ne12/ne02;
+                        const unsigned int r3 = ne13/ne03;
 
                         // find the break-even point where the matrix-matrix kernel becomes more efficient compared
                         // to the matrix-vector kernel
@@ -1719,8 +1719,8 @@ static enum ggml_status ggml_metal_graph_compute(
                         // batch size
                         GGML_ASSERT(ne21 == ne11); // ?
                         GGML_ASSERT(ne12 == 1 && ne13 == 1); // no broadcasting
-                        const uint r2 = 1;
-                        const uint r3 = 1;
+                        const unsigned int r2 = 1;
+                        const unsigned int r3 = 1;
 
                         // for now the matrix-matrix multiplication kernel only works on A14+/M1+ SoCs
                         // AMD GPU and older A-chips will reuse matrix-vector multiplication kernel
