@@ -23,6 +23,7 @@ add_library(${TARGET} STATIC
     common.cpp
     common-ggml.h
     common-ggml.cpp
+    grammar-parser.cpp
     )
 
 include(DefaultTargetOptions)
@@ -64,9 +65,11 @@ elseif(CMAKE_JS_VERSION)
 else()
     add_subdirectory(main)
     add_subdirectory(stream)
+    add_subdirectory(server)
     add_subdirectory(command)
     add_subdirectory(bench)
     add_subdirectory(quantize)
     add_subdirectory(talk)
     add_subdirectory(talk-llama)
+    add_subdirectory(lsp)
 endif()
